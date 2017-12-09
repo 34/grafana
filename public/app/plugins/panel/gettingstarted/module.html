@@ -1,7 +1,7 @@
 <div class="dashlist" ng-if="ctrl.checksDone">
   <div class="dashlist-section">
     <h6 class="dashlist-section-header">
-      Getting Started with Grafana
+      <span translate>Getting Started with Grafana</span>
       <button class="dashlist-cta-close-btn" ng-click="ctrl.dismiss()">
         <i class="fa fa-remove"></i>
       </button>
@@ -10,9 +10,9 @@
       <li class="progress-step" ng-repeat="step in ctrl.steps" ng-class="step.cssClass">
         <a class="progress-link" ng-href="{{step.href}}" target="{{step.target}}" title="{{step.note}}">
           <span class="progress-marker" ng-class="step.cssClass"><i class="{{step.icon}}"></i></span>
-          <span class="progress-text" ng-href="{{step.href}}" target="{{step.target}}">{{step.title}}</span>
+          <span class="progress-text" ng-href="{{step.href}}" target="{{step.target}}">{{step.title | translate}}</span>
         </a>
-        <a class="btn progress-step-cta" ng-href="{{step.href}}" target="{{step.target}}">{{step.cta}}</a>
+        <a class="btn progress-step-cta" ng-href="{{step.href}}" target="{{step.target}}">{{step.cta | translate}}</a>
       </li>
     </ul>
   </div>

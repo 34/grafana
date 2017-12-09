@@ -1,2 +1,15 @@
 {
+    "Add Users": "添加用户",
+    "Add data source": "添加数据源",
+    "Community": "社区",
+    "Create your first dashboard": "创建你的第一个仪表盘",
+    "Create your first data source": "创建你的第一个数据源",
+    "Docs": "文档",
+    "Explore plugin repository": "发现插件仓库",
+    "Getting Started with Grafana": "开始使用Grafana",
+    "Install Grafana": "安装Grafana",
+    "Install apps \u0026 plugins": "安装apps \u0026 插件",
+    "Invite your team": "邀请你的团队",
+    "New dashboard": "新建仪表盘",
+    "Support Plans": "支持计划"
 }
