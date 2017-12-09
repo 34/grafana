@@ -329,6 +329,9 @@ func (hs *HttpServer) registerRoutes() {
 	// streams
 	//r.Post("/api/streams/push", reqSignedIn, bind(dtos.StreamMessage{}), liveConn.PushToStream)
 
+	// add not found translate text
+	r.Post("/api/trans", bind(dtos.TranslateTextForm{}), SaveNotTranslateText)
+
 	r.Register(macaronR)
 
 	InitAppPluginRoutes(macaronR)

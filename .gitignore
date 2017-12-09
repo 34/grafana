@@ -58,3 +58,5 @@ debug.test
 /vendor/**/*_test.go
 /vendor/**/.editorconfig
 /vendor/**/appengine*
+public/app/i18n/langs.ts
+public/app/i18n/langs.ts

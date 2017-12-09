@@ -62,7 +62,7 @@ export class GrafanaApp {
           $translateProvider.translations(lang, langs[lang]);
         });
       }
-      $translateProvider.preferredLanguage('en');
+      $translateProvider.preferredLanguage('zh');
 
       // pre assing bindings before constructor calls
       $compileProvider.preAssignBindingsEnabled(true);

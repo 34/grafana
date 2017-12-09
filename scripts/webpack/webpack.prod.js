@@ -8,6 +8,7 @@ const path = require('path');
 const ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const I18nPlugin = require('./i18n.plugin');
 
 module.exports = merge(common, {
   devtool: "source-map",
@@ -34,6 +35,11 @@ module.exports = merge(common, {
   },
 
   plugins: [
+    new I18nPlugin({
+      filename: path.resolve(__dirname, '../../public/app/i18n/langs.ts'),
+      template: path.resolve(__dirname, '../../public/app/i18n/langs.tmpl'),
+      i18npath: path.resolve(__dirname, '../../i18n')
+    }),
     new ExtractTextPlugin({
       filename: 'grafana.[name].css',
     }),

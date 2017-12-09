@@ -1,9 +1,10 @@
 var langs = {
   "en": {
-    "application": "IOT Hero Dashboard"
+    "app {} %s () title": "IOT Hero Dashboard",
+    "test translate": ""
   },
   "zh": {
-    "application": "IOT英雄监控面板"
+    "app {} %s () title": "IOT英雄监控面板"
   }
 };
 export default langs;
