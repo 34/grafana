@@ -6,6 +6,7 @@ awsconfig
 /dist
 /public/build
 /public/views/index.html
+/public/app/i18n/langs.ts
 /emails/dist
 /public_gen
 /public/vendor/npm
