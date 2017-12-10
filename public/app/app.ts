@@ -20,7 +20,6 @@ import angular from 'angular';
 import config from 'app/core/config';
 import _ from 'lodash';
 import moment from 'moment';
-import langs from 'app/i18n/langs';
 
 // add move to lodash for backward compatabiltiy
 _.move = function (array, fromIndex, toIndex) {
@@ -57,11 +56,10 @@ export class GrafanaApp {
     moment.locale(config.bootData.user.locale);
 
     app.config(($locationProvider, $controllerProvider, $compileProvider, $filterProvider, $httpProvider, $provide, $translateProvider) => {
-      if (langs) {
-        Object.keys(langs).forEach(lang => {
-          $translateProvider.translations(lang, langs[lang]);
-        });
-      }
+      $translateProvider.useStaticFilesLoader({
+        prefix: '/public/locale/locale-',
+        suffix: '.json'
+      });
       $translateProvider.preferredLanguage('zh');
 
       // pre assing bindings before constructor calls

@@ -114,6 +114,7 @@
     "angular-route": "^1.6.6",
     "angular-sanitize": "^1.6.6",
     "angular-translate": "^2.16.0",
+    "angular-translate-loader-static-files": "^2.16.0",
     "babel-polyfill": "^6.26.0",
     "brace": "^0.10.0",
     "clipboard": "^1.7.1",

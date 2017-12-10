@@ -6,7 +6,7 @@ awsconfig
 /dist
 /public/build
 /public/views/index.html
-/public/app/i18n/langs.ts
+/public/locale/raw-en.json
 /emails/dist
 /public_gen
 /public/vendor/npm
@@ -61,3 +61,4 @@ debug.test
 /vendor/**/appengine*
 public/app/i18n/langs.ts
 public/app/i18n/langs.ts
+public/locale/raw-en.json

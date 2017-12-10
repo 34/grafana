@@ -364,7 +364,13 @@ angular-sanitize@^1.6.6:
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.6.6.tgz#0fd065a19931517fbece66596d325d72b6e06041"
 
-angular-translate@^2.16.0:
+angular-translate-loader-static-files@^2.16.0:
+  version "2.16.0"
+  resolved "http://registry.npm.taobao.org/angular-translate-loader-static-files/download/angular-translate-loader-static-files-2.16.0.tgz#ba78bbe592495e05f8223f272f22fbe61d67a8df"
+  dependencies:
+    angular-translate "~2.16.0"
+
+angular-translate@^2.16.0, angular-translate@~2.16.0:
   version "2.16.0"
   resolved "http://registry.npm.taobao.org/angular-translate/download/angular-translate-2.16.0.tgz#6b7f84657d6534d25878cc55e6a2a06f7607299f"
   dependencies:
