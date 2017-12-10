@@ -12,16 +12,22 @@ import (
 )
 
 const translateFile = "public/locale/raw-en.json"
+const translateFileZh = "public/locale/locale-zh.json"
 
 type translateData struct {
 	locker       sync.Mutex
 	LastUpdateAt time.Time
 	TransMap     map[string]string
+	LocaleZh     map[string]string
 }
 
 func (d *translateData) Get(k string) (string, bool) {
 	d.locker.Lock()
 	defer d.locker.Unlock()
+
+	if _, ok := d.LocaleZh[k]; ok {
+		return "", true
+	}
 
 	v, ok := d.TransMap[k]
 	return v, ok
@@ -54,9 +60,19 @@ func (d *translateData) Load() {
 		fmt.Println("error read file " + err.Error())
 		return
 	}
+	data.TransMap = make(map[string]string)
 	json.Unmarshal(f, &data.TransMap)
 	d.LastUpdateAt = time.Now()
 	fmt.Printf("load %s, %v \n", translateFile, data.TransMap)
+
+	f, err = ioutil.ReadFile(translateFileZh)
+	if err != nil {
+		fmt.Println("error read file " + err.Error())
+		return
+	}
+	data.LocaleZh = make(map[string]string)
+	json.Unmarshal(f, &data.LocaleZh)
+	fmt.Printf("load %s, %v \n", translateFileZh, data.LocaleZh)
 }
 
 func (d *translateData) Reload() {
@@ -67,6 +83,7 @@ func (d *translateData) Reload() {
 
 var data = translateData{
 	TransMap:     make(map[string]string),
+	LocaleZh:     make(map[string]string),
 	LastUpdateAt: time.Now(),
 }
 

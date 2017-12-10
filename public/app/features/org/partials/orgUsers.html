@@ -2,7 +2,7 @@
 
 <div class="page-container">
 	<div class="page-header">
-		<h1>Organization users</h1>
+		<h1 translate>Organization users</h1>
 
 		<div class="page-header-tabs">
 
@@ -39,13 +39,13 @@
     <table class="filter-table form-inline">
       <thead>
         <tr>
-          <th>Login</th>
-          <th>Email</th>
+          <th translate>Login</th>
+          <th translate>Email</th>
 					<th>
-						Seen
-						<tip>Time since user was seen using Grafana</tip>
+						<span translate>Seen</span>
+						<tip translate>Time since user was seen using Grafana</tip>
 					</th>
-          <th>Role</th>
+          <th translate>Role</th>
           <th style="width: 34px;"></th>
         </tr>
       </thead>
@@ -70,8 +70,8 @@
     <table class="filter-table form-inline">
       <thead>
         <tr>
-          <th>Email</th>
-          <th>Name</th>
+          <th translate>Email</th>
+          <th translate>Name</th>
           <th></th>
         </tr>
       </thead>
@@ -81,11 +81,11 @@
           <td>{{invite.name}}</td>
           <td class="text-right">
             <button class="btn btn-inverse btn-mini" clipboard-button="ctrl.getInviteUrl(invite)" ng-click="ctrl.copyInviteToClipboard($event)">
-              <i class="fa fa-clipboard"></i> Copy Invite
+              <i class="fa fa-clipboard"></i> <span translate>Copy Invite</span>
             </button>
             &nbsp;
             <button class="btn btn-inverse btn-mini">
-              Details
+              <span translate>Details</span>
               <i ng-show="!invite.expanded" class="fa fa-caret-right"></i>
               <i ng-show="invite.expanded" class="fa fa-caret-down"></i>
             </button>
@@ -96,10 +96,10 @@
             <a href="{{invite.url}}">{{invite.url}}</a><br><br>
             &nbsp;
             <button class="btn btn-inverse btn-mini" ng-click="ctrl.revokeInvite(invite, $event)">
-              <i class="fa fa-remove" style="color: red"></i> Revoke invite
+              <i class="fa fa-remove" style="color: red"></i> <span translate>Revoke invite</span>
             </button>
             <span style="padding-left: 15px">
-              Invited: <em> {{invite.createdOn | date: 'shortDate'}} by {{invite.invitedBy}} </em>
+              <span translate>Invited</span>: <em> {{invite.createdOn | date: 'shortDate'}} by {{invite.invitedBy}} </em>
             </span>
           </td>
         </tr>

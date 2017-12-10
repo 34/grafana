@@ -1,26 +1,26 @@
 <div ng-controller="AnnotationsEditorCtrl">
 	<div class="tabbed-view-header">
-		<h2 class="tabbed-view-title">
+		<h2 class="tabbed-view-title" translate>
 			Annotations
 		</h2>
 
 		<ul class="gf-tabs">
 			<li class="gf-tabs-item" >
-				<a class="gf-tabs-link" ng-click="ctrl.mode = 'list';" ng-class="{active: ctrl.mode === 'list'}">
+				<a class="gf-tabs-link" ng-click="ctrl.mode = 'list';" ng-class="{active: ctrl.mode === 'list'}" translate>
 					Queries
 				</a>
 			</li>
 			<li class="gf-tabs-item" ng-show="ctrl.mode === 'edit'">
-				<a class="gf-tabs-link" ng-class="{active: ctrl.mode === 'edit'}">
+				<a class="gf-tabs-link" ng-class="{active: ctrl.mode === 'edit'}" translate>
 					Edit Query
 				</a>
 			</li>
 			<li class="gf-tabs-item" ng-show="ctrl.mode === 'new'">
-				<span class="active gf-tabs-link">New Query</span>
+				<span class="active gf-tabs-link" translate>New Query</span>
 			</li>
 
 			<li class="gf-tabs-item" >
-        <a class="gf-tabs-link" ng-click="ctrl.mode = 'help';" ng-class="{active: ctrl.mode === 'help'}">
+        <a class="gf-tabs-link" ng-click="ctrl.mode = 'help';" ng-class="{active: ctrl.mode === 'help'}" translate>
           Help
         </a>
       </li>
@@ -35,22 +35,22 @@
 
 		<div ng-show="ctrl.mode === 'help'">
 			<div class="grafana-info-box col-lg-8">
-				<h5>What are Annotations?</h5>
-				<p>
+				<h5 translate>What are Annotations?</h5>
+				<p translate>
 					Annotations provide a way to integrate event data into your graphs. They are visualized as vertical lines and icons
 					on all graph panels. When you hover over an annotation icon you can get title, tags, and text information for the event.
 					In the <i>Queries</i> tab you can add queries that return annotation events.
 				</p>
-				<p>
+				<p translate>
 					You can add annotations directly from grafana by holding CTRL or CMD + click on graph (or drag region). These will be stored in Grafana's annotation database.
-				</p>
+				</p translate>
 				Checkout the <a class="external-link" target="_blank" href="http://docs.grafana.org/reference/annotations/">Annotations documentation</a> for more information.
 			</div>
 		</div>
 
 		<div class="editor-row row" ng-if="ctrl.mode === 'list'">
 			<div ng-if="ctrl.annotations.length === 0">
-				<em>No annotation queries defined</em>
+				<em translate>No annotation queries defined</em>
 			</div>
 			<table class="grafana-options-table">
 				<tr ng-repeat="annotation in ctrl.annotations">
@@ -67,7 +67,7 @@
 					<td style="width: 1%">
 						<a ng-click="ctrl.edit(annotation)" class="btn btn-inverse btn-mini">
 							<i class="fa fa-edit"></i>
-							Edit
+							<span translate>Edit</span>
 						</a>
 					</td>
 					<td style="width: 1%">
@@ -88,14 +88,14 @@
 		<div class="annotations-basic-settings" ng-if="ctrl.mode === 'edit' || ctrl.mode === 'new'">
 			<div>
 				<div class="gf-form-group">
-					<h5 class="section-heading">General</h5>
+					<h5 class="section-heading" translate>General</h5>
 					<div class="gf-form-inline">
 						<div class="gf-form">
-							<span class="gf-form-label width-7">Name</span>
+							<span class="gf-form-label width-7" translate>Name</span>
 							<input type="text" class="gf-form-input width-20" ng-model='ctrl.currentAnnotation.name' placeholder="name"></input>
 						</div>
 						<div class="gf-form">
-							<span class="gf-form-label width-7">Data source</span>
+							<span class="gf-form-label width-7" translate>Data source</span>
 							<div class="gf-form-select-wrapper">
 								<select class="gf-form-input" ng-model="ctrl.currentAnnotation.datasource" ng-options="f.name as f.name for f in ctrl.datasources" ng-change="ctrl.datasourceChanged()"></select>
 							</div>
@@ -119,7 +119,7 @@
 														label-class="width-7">
 						</gf-form-switch>
 						<div class="gf-form">
-							<label class="gf-form-label width-9">Color</label>
+							<label class="gf-form-label width-9" translate>Color</label>
 							<span class="gf-form-label">
 								<color-picker color="ctrl.currentAnnotation.iconColor" onChange="ctrl.onColorChange"></color-picker>
 							</span>
@@ -128,7 +128,7 @@
 				</div>
 			</div>
 
-			<h5 class="section-heading">Query</h5>
+			<h5 class="section-heading" translate>Query</h5>
 			<rebuild-on-change property="ctrl.currentDatasource">
 				<plugin-component type="annotations-query-ctrl">
 				</plugin-component>
@@ -136,8 +136,8 @@
 
 			<div class="gf-form">
 				<div class="gf-form-button-row p-y-0">
-					<button ng-show="ctrl.mode === 'new'" type="button" class="btn gf-form-button btn-success" ng-click="ctrl.add()">Add</button>
-					<button ng-show="ctrl.mode === 'edit'" type="button" class="btn btn-success pull-left" ng-click="ctrl.update()">Update</button>
+					<button ng-show="ctrl.mode === 'new'" type="button" class="btn gf-form-button btn-success" ng-click="ctrl.add()" translate>Add</button>
+					<button ng-show="ctrl.mode === 'edit'" type="button" class="btn btn-success pull-left" ng-click="ctrl.update()" translate>Update</button>
 				</div>
 			</div>
 		</div>

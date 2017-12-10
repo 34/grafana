@@ -1,7 +1,7 @@
 <div class="modal-body" ng-controller="UserInviteCtrl" ng-init="init()">
 
 	<div class="modal-header">
-		<h2 class="modal-header-title">
+		<h2 class="modal-header-title" translate>
 			Invite Users
 		</h2>
 		<a class="modal-header-close" ng-click="dismiss();">
@@ -12,7 +12,7 @@
 	<div class="modal-content">
 
 		<div class="modal-tagline p-b-2">
-			Send invite or add existing Grafana users to the organization
+			<span translate>Send invite or add existing Grafana users to the organization</span>
 			<span class="highlight-word">{{contextSrv.user.orgName}}</span>
 		</div>
 
@@ -20,15 +20,15 @@
 			<div class="gf-form-group">
 				<div class="gf-form-inline" ng-repeat="invite in invites">
 					<div class="gf-form max-width-21">
-						<span class="gf-form-label">Email or Username</span>
+						<span class="gf-form-label" translate>Email or Username</span>
 						<input type="text" ng-model="invite.loginOrEmail" required class="gf-form-input" placeholder="email@test.com">
 					</div>
 					<div class="gf-form max-width-14">
-						<span class="gf-form-label">Name</span>
+						<span class="gf-form-label" translate>Name</span>
 						<input type="text" ng-model="invite.name" class="gf-form-input" placeholder="name (optional)">
 					</div>
 					<div class="gf-form max-width-10">
-						<span class="gf-form-label">Role</span>
+						<span class="gf-form-label" translate>Role</span>
 						<select ng-model="invite.role" class="gf-form-input" ng-options="f for f in ['Viewer', 'Editor', 'Read Only Editor', 'Admin']">
 						</select>
 					</div>
@@ -44,15 +44,15 @@
 				<div class="gf-form" style="margin-right:.25rem">
 					<a class="btn btn-inverse gf-form-button" ng-click="addInvite()">
 						<i class="fa fa-plus"></i>
-						Invite another
+						<span translate>Invite another</span>
 					</a>
 				</div>
 				<gf-form-switch class="gf-form" label="Skip sending invite email" checked="options.skipEmails" switch-class="max-width-6"></gf-form-switch>
 			</div>
 
 			<div class="gf-form-button-row">
-				<button type="submit" class="btn btn-success" ng-click="sendInvites();">Invite Users</button>
-				<a class="btn-text" ng-click="dismiss()">Cancel</a>
+				<button type="submit" class="btn btn-success" ng-click="sendInvites();" translate>Invite Users</button>
+				<a class="btn-text" ng-click="dismiss()" translate>Cancel</a>
 			</div>
 			<div class="clearfix"></div>
 		</form>
