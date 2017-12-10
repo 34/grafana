@@ -2,22 +2,22 @@
 
 <div class="page-container" >
   <div class="page-header">
-    <h1>Alert List</h1>
+    <h1 translate>Alert List</h1>
     <a class="btn btn-inverse" ng-click="ctrl.openHowTo()">
       <i class="fa fa-info-circle"></i>
-      How to add an alert
+      <span translate>How to add an alert</span>
     </a>
 
     <a class="btn btn-inverse" href="alerting/notifications" >
       <i class="fa fa-cog"></i>
-      Configure notifications
+      <span translate>Configure notifications</span>
     </a>
   </div>
 
   <div class="gf-form-group">
     <div class="gf-form-inline">
       <div class="gf-form">
-        <label class="gf-form-label">Filter by state</label>
+        <label class="gf-form-label" translate>Filter by state</label>
         <div class="gf-form-select-wrapper width-13">
           <select class="gf-form-input" ng-model="ctrl.filters.state" ng-options="f.value as f.text for f in ctrl.stateFilters" ng-change="ctrl.filtersChanged()">
           </select>

@@ -34,6 +34,17 @@ func (d *translateData) Set(k, v string) {
 	d.TransMap[k] = v
 }
 
+func (d *translateData) All() map[string]string {
+	d.locker.Lock()
+	defer d.locker.Unlock()
+
+	m := make(map[string]string)
+	for k, v := range d.TransMap {
+		m[k] = v
+	}
+	return m
+}
+
 func (d *translateData) Load() {
 	d.locker.Lock()
 	defer d.locker.Unlock()
@@ -69,7 +80,7 @@ func SaveNotTranslateText(c *middleware.Context, form dtos.TranslateTextForm) Re
 
 	if _, ok := data.Get(form.Text); !ok {
 		data.Set(form.Text, "")
-		b, err := json.MarshalIndent(data.TransMap, "", "  ")
+		b, err := json.MarshalIndent(data.All(), "", "  ")
 		if err != nil {
 			c.Logger.Error("SaveNotTranslateText.MarshalIntent", "error", err)
 		}

@@ -14,6 +14,8 @@ import 'ngreact';
 import 'vendor/bootstrap/bootstrap';
 import 'vendor/angular-ui/ui-bootstrap-tpls';
 import 'vendor/angular-other/angular-strap';
+import 'vendor/angular-other/angular-translate';
+import 'vendor/angular-other/angular-translate-loader-static-files';
 
 import $ from 'jquery';
 import angular from 'angular';
@@ -61,6 +63,7 @@ export class GrafanaApp {
         suffix: '.json'
       });
       $translateProvider.preferredLanguage('zh');
+      // $translateProvider.useMissingTranslationHandler('translateNotFoundHandler');
 
       // pre assing bindings before constructor calls
       $compileProvider.preAssignBindingsEnabled(true);
@@ -91,6 +94,11 @@ export class GrafanaApp {
         return $delegate;
       }]);
     });
+
+    // app.factory('translateNotFoundHandler', function(translationId, $uses, interpolateParams, defaultTranslationText, sanitizeStrategy) {
+    //   console.log('translateNotFoundHandler', translationId, $uses, interpolateParams, defaultTranslationText, sanitizeStrategy);
+    //   return translationId;
+    // });
 
     this.ngModuleDependencies = [
       'grafana.core',

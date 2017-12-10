@@ -21,11 +21,11 @@
 			<i class="fa fa-filter"></i>
 			<a class="pointer" href="javascript:void 0;" ng-click="ctrl.showStarred()" tabindex="2">
 				<i class="fa fa-remove" ng-show="ctrl.query.starred"></i>
-				starred
+				<span translate>starred</span>
 			</a> |
 			<a class="pointer" href="javascript:void 0;" ng-click="ctrl.getTags()" tabindex="3">
 				<i class="fa fa-remove" ng-show="ctrl.tagsMode"></i>
-				tags
+				<span translate>tags</span>
 			</a>
 			<span ng-if="ctrl.query.tag.length">
 				|
@@ -54,7 +54,7 @@
 		</div>
 
 		<div class="search-results-container" ng-if="!ctrl.tagsMode">
-			<h6 ng-hide="ctrl.results.length">No dashboards matching your query were found.</h6>
+			<h6 ng-hide="ctrl.results.length" translate>No dashboards matching your query were found.</h6>
 
 			<a class="search-item pointer search-item-{{row.type}}" bindonce ng-repeat="row in ctrl.results"
 				ng-class="{'selected': $index == ctrl.selectedIndex}" ng-href="{{row.url}}">
@@ -77,15 +77,15 @@
 
 		<div class="search-button-row">
 			<a class="btn btn-secondary" href="dashboard/new" ng-show="ctrl.contextSrv.isEditor" ng-click="ctrl.isOpen = false;">
-				<i class="fa fa-plus"></i>&nbsp; New Dashboard
+				<i class="fa fa-plus"></i>&nbsp; <span translate>New Dashboard</span>
 			</a>
 
 			<a class="btn btn-inverse" href="dashboard/new/?editview=import" ng-show="ctrl.contextSrv.isEditor" ng-click="ctrl.isOpen = false;">
-				<i class="fa fa-upload"></i>&nbsp; Import Dashboard
+				<i class="fa fa-upload"></i>&nbsp; <span translate>Import Dashboard</span>
 			</a>
 
 			<a class="search-button-row-explore-link" target="_blank" href="https://grafana.com/dashboards?utm_source=grafana_search">
-				Find <img src="public/img/icn-dashboard-tiny.svg" width="14" /> dashboards on Grafana.com
+				Find <img src="public/img/icn-dashboard-tiny.svg" width="14" /> <span translate>dashboards on Grafana.com</span>
 			</a>
 		</div>
 	</div>

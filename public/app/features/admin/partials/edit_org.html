@@ -2,27 +2,27 @@
 
 <div class="page-container">
 	<div class="page-header">
-		<h1>Edit Organization</h1>
+		<h1 translate>Edit Organization</h1>
 	</div>
 
 	<form name="orgDetailsForm" class="gf-form-group">
 		<div class="gf-form">
-			<span class="gf-form-label width-10">Name</span>
+			<span class="gf-form-label width-10" translate>Name</span>
 			<input type="text" required ng-model="org.name" class="gf-form-input max-width-14" >
 		</div>
 
 		<div class="gf-form-button-row">
-			<button type="submit" class="btn btn-success" ng-click="update()" ng-show="!createMode">Update</button>
+			<button type="submit" class="btn btn-success" ng-click="update()" ng-show="!createMode"><span translate>>Update</span</button>
 		</div>
 	</form>
 
-	<h3 class="page-heading">Organization Users</h3>
+	<h3 class="page-heading"><span translate>Organization Users</span></h3>
 
 	<table class="grafana-options-table">
 		<tr>
-			<th>Username</th>
-			<th>Email</th>
-			<th>Role</th>
+			<th translate>Username</th>
+			<th translate>Email</th>
+			<th translate>Role</th>
 			<th></th>
 		</tr>
 		<tr ng-repeat="orgUser in orgUsers">

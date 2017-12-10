@@ -2,16 +2,16 @@
 
 <div class="page-container">
   <div class="page-header">
-    <h1>Users</h1>
+    <h1 translate>Users</h1>
 
     <a class="btn btn-success" href="admin/users/create">
       <i class="fa fa-plus"></i>
-      Add new user
+      <span translate>Add new user</span>
     </a>
   </div>
 
   <div class="gf-form pull-right gf-form-group">
-		<label class="gf-form-label">Search</label>
+		<label class="gf-form-label" translate>Search</label>
     <span style="position: relative;">
       <input class="gf-form-input width-15" type="text" placeholder="Find user by name/login/email" tabindex="1" give-focus="true" ng-model="ctrl.query" ng-model-options="{ debounce: 500 }" spellcheck='false' ng-change="ctrl.getUsers()" />
     </span>
@@ -21,13 +21,13 @@
     <table class="filter-table form-inline">
       <thead>
         <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Login</th>
-          <th>Email</th>
+          <th translate>Id</th>
+          <th translate>Name</th>
+          <th translate>Login</th>
+          <th translate>Email</th>
           <th>
-						Seen
-						<tip>Time since user was seen using Grafana</tip>
+						<span translate>Seen</span>
+						<tip  translate>Time since user was seen using Grafana</tip>
 					</th>
           <th></th>
           <th></th>
@@ -48,7 +48,7 @@
           <td class="text-right">
             <a href="admin/users/edit/{{user.id}}" class="btn btn-inverse btn-small">
               <i class="fa fa-edit"></i>
-              Edit
+              <span translate>Edit</span>
             </a>
             &nbsp;&nbsp;
             <a ng-click="ctrl.deleteUser(user)" class="btn btn-danger btn-small">

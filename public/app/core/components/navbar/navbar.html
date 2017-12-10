@@ -16,7 +16,7 @@
 		<a href="{{::ctrl.section.url}}" class="navbar-page-btn">
       <i class="{{::ctrl.section.icon}}" ng-show="::ctrl.section.icon"></i>
       <img ng-src="{{::ctrl.section.iconUrl}}" ng-show="::ctrl.section.iconUrl"></i>
-      {{::ctrl.section.title}}
+      {{::ctrl.section.title | translate}}
     </a>
 	</div>
 
@@ -24,14 +24,14 @@
     <a href="{{::ctrl.section.url}}" class="navbar-page-btn" data-toggle="dropdown">
       <i class="{{::ctrl.section.icon}}" ng-show="::ctrl.section.icon"></i>
       <img ng-src="{{::ctrl.section.iconUrl}}" ng-show="::ctrl.section.iconUrl"></i>
-      {{::ctrl.section.title}}
+      {{::ctrl.section.title | translate}}
       <i class="fa fa-caret-down"></i>
     </a>
     <ul class="dropdown-menu dropdown-menu--navbar">
       <li ng-repeat="navItem in ::ctrl.model.menu" ng-class="{active: navItem.active}">
         <a class="pointer" ng-href="{{::navItem.url}}" ng-click="ctrl.navItemClicked(navItem, $event)">
           <i class="{{::navItem.icon}}" ng-show="::navItem.icon"></i>
-          {{::navItem.title}}
+          {{::navItem.title | translate}}
         </a>
       </li>
     </ul>
