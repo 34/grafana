@@ -2,11 +2,11 @@
 
 <div class="page-container">
 	<div class="page-header">
-		<h1>Style Guide</h1>
+		<h1 translate>Style Guide</h1>
 
 		<a class="btn btn-success" ng-click="ctrl.switchTheme()">
 			<i class="fa fa-random"></i>
-			Switch theme
+			<span translate>Switch theme</span>
 		</a>
 
 		<div class="page-header-tabs">
@@ -47,11 +47,11 @@
 	</div>
 
 	<div class="tab-pane style-guide-plugin-authoring" ng-if="ctrl.page.plugins">
-		<p>From grafana 3.0 it's very easy to develop your own plugins and share them with other grafana users.</p>
-		<p>More information about plugin development can be found at <a href="http://docs.grafana.org/plugins/developing/development/" target="_blank">docs.grafana.org</a></p>
+		<p translate>From grafana 3.0 it's very easy to develop your own plugins and share them with other grafana users.</p>
+		<p><span translate>More information about plugin development can be found at</span> <a href="http://docs.grafana.org/plugins/developing/development/" target="_blank">docs.grafana.org</a></p>
 	</div>
 
-	<div class="tab-pane" ng-if="ctrl.page.forms">
+	<div class="tab-pane" ng-if="ctrl.page.forms" translate>
 		forms
 	</div>
 

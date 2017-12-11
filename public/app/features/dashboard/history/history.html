@@ -1,16 +1,16 @@
 <div class="tabbed-view-header">
-	<h2 class="tabbed-view-title">
+	<h2 class="tabbed-view-title" translate>
 		Version history
 	</h2>
 
 	<ul class="gf-tabs">
 		<li class="gf-tabs-item" >
-			<a class="gf-tabs-link" ng-click="ctrl.switchMode('list');" ng-class="{active: ctrl.mode === 'list'}">
+			<a class="gf-tabs-link" ng-click="ctrl.switchMode('list');" ng-class="{active: ctrl.mode === 'list'}" translate>
 				List
 			</a>
 		</li>
 		<li class="gf-tabs-item" ng-show="ctrl.mode === 'compare'">
-			<span class="active gf-tabs-link">
+			<span class="active gf-tabs-link" translate>
 				Version Comparison
 			</span>
 		</li>
@@ -26,7 +26,7 @@
 	<div ng-if="ctrl.mode === 'list'">
 		<div ng-if="ctrl.loading">
 			<i class="fa fa-spinner fa-spin"></i>
-			<em>Fetching history list&hellip;</em>
+			<em><span translate>Fetching history list</span>&hellip;</em>
 		</div>
 
 		<div ng-if="!ctrl.loading">
@@ -35,10 +35,10 @@
           <thead>
             <tr>
               <th class="width-4"></th>
-              <th class="width-4">Version</th>
-              <th class="width-14">Date</th>
-              <th class="width-10">Updated By</th>
-              <th>Notes</th>
+              <th class="width-4" translate>Version</th>
+              <th class="width-14" translate>Date</th>
+              <th class="width-10" translate>Updated By</th>
+              <th translate>Notes</th>
               <th></th>
             </tr>
           </thead>
@@ -57,10 +57,10 @@
               <td>{{revision.message}}</td>
               <td class="text-right">
                 <a class="btn btn-inverse btn-small" ng-show="revision.version !== ctrl.dashboard.version" ng-click="ctrl.restore(revision.version)">
-                  <i class="fa fa-history"></i>&nbsp;&nbsp;Restore
+                  <i class="fa fa-history"></i>&nbsp;&nbsp;<span translate>Restore</span>
                 </a>
                 <a class="btn btn-outline-disabled btn-small" ng-show="revision.version === ctrl.dashboard.version">
-                  <i class="fa fa-check"></i>&nbsp;&nbsp;Latest
+                  <i class="fa fa-check"></i>&nbsp;&nbsp;<span translate>Latest</span>
                 </a>
               </td>
             </tr>
@@ -69,7 +69,7 @@
 
         <div ng-if="ctrl.appending">
           <i class="fa fa-spinner fa-spin"></i>
-          <em>Fetching more entries&hellip;</em>
+          <em><span translate>Fetching more entries</span>&hellip;</em>
         </div>
 
         <div class="gf-form-group" ng-show="ctrl.mode === 'list'">
@@ -80,14 +80,14 @@
                 ng-disabled="!ctrl.canCompare"
                 ng-click="ctrl.getDiff(ctrl.diff)"
 								bs-tooltip="ctrl.canCompare ? '' : 'Select 2 versions to start comparing'" data-placement="bottom">
-              <i class="fa fa-code-fork" ></i>&nbsp;&nbsp;Compare versions
+              <i class="fa fa-code-fork" ></i>&nbsp;&nbsp;<span translate>Compare versions</span>
             </button>
             <button  type="button"
                 class="btn gf-form-button btn-inverse"
                 ng-if="ctrl.revisions.length >= ctrl.limit"
                 ng-click="ctrl.addToLog()"
                 ng-disabled="ctrl.isLastPage()">
-              Show more versions
+              <span translate>Show more versions</span>
             </button>
           </div>
         </div>
@@ -98,15 +98,15 @@
 	<div class="edit-tab-with-sidemenu" ng-if="ctrl.mode === 'compare'">
     <aside class="edit-sidemenu-aside">
       <ul class="edit-sidemenu">
-        <li ng-class="{active: ctrl.diff === 'basic'}"><a ng-click="ctrl.getDiff('basic')" href="">Change Summary</a></li>
-        <li ng-class="{active: ctrl.diff === 'html'}"><a ng-click="ctrl.getDiff('json')" href="">JSON Diff</a></li>
+        <li ng-class="{active: ctrl.diff === 'basic'}"><a ng-click="ctrl.getDiff('basic')" href="" translate>Change Summary</a></li>
+        <li ng-class="{active: ctrl.diff === 'html'}"><a ng-click="ctrl.getDiff('json')" href="" translate>JSON Diff</a></li>
       </ul>
     </aside>
 
     <div class="edit-tab-content">
       <div ng-if="ctrl.loading">
         <i class="fa fa-spinner fa-spin"></i>
-        <em>Fetching changes&hellip;</em>
+        <em><span translate>Fetching changes</span>&hellip;</em>
       </div>
 
       <div ng-if="!ctrl.loading">
@@ -114,23 +114,23 @@
             class="btn gf-form-button btn-secondary pull-right"
             ng-click="ctrl.restore(ctrl.baseInfo.version)"
             ng-if="ctrl.isNewLatest">
-          <i class="fa fa-history" ></i>&nbsp;&nbsp;Restore to version {{ctrl.baseInfo.version}}
+          <i class="fa fa-history" ></i>&nbsp;&nbsp;<span translate>Restore to version</span> {{ctrl.baseInfo.version}}
         </a>
         <h4>
-          Comparing Version {{ctrl.baseInfo.version}}
+          <span translate>Comparing Version</span> {{ctrl.baseInfo.version}}
           <i class="fa fa-arrows-h"></i>
-					Version {{ctrl.newInfo.version}}
+					<span translate>Version</span> {{ctrl.newInfo.version}}
           <cite class="muted" ng-if="ctrl.isNewLatest">(Latest)</cite>
         </h4>
         <section>
           <p class="small muted">
-          <strong>Version {{ctrl.newInfo.version}}</strong> updated by
+          <strong><span translate>Version</span> {{ctrl.newInfo.version}}</strong> <span translate>updated by</span>
           <span>{{ctrl.newInfo.createdBy}} </span>
           <span>{{ctrl.newInfo.ageString}}</span>
           <span> - {{ctrl.newInfo.message}}</span>
           </p>
           <p class="small muted">
-          <strong>Version {{ctrl.baseInfo.version}}</strong> updated by
+          <strong><span translate>Version</span> {{ctrl.baseInfo.version}}</strong> <span translate>updated by</span>
           <span>{{ctrl.baseInfo.createdBy}} </span>
           <span>{{ctrl.baseInfo.ageString}}</span>
           <span> - {{ctrl.baseInfo.message}}</span>

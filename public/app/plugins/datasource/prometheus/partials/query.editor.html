@@ -9,7 +9,7 @@
 
 	<div class="gf-form-inline">
 		<div class="gf-form max-width-26">
-			<label class="gf-form-label width-8">Legend format</label>
+			<label class="gf-form-label width-8" translate>Legend format</label>
 			<input type="text" class="gf-form-input" ng-model="ctrl.target.legendFormat"
 			spellcheck='false' placeholder="legend format" data-min-length=0 data-items=1000
 			ng-model-onblur ng-change="ctrl.refreshMetricData()">
@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="gf-form">
-			<label class="gf-form-label width-6">Min step</label>
+			<label class="gf-form-label width-6" translate>Min step</label>
 			<input type="text" class="gf-form-input width-8" ng-model="ctrl.target.interval"
 					   data-placement="right"
 			       spellcheck='false'
@@ -25,13 +25,13 @@
 			       data-min-length=0 data-items=100
 			       ng-model-onblur
 			       ng-change="ctrl.refreshMetricData()"/>
-			<info-popover mode="right-absolute">
+			<info-popover mode="right-absolute" translate>
 				Leave blank for auto handling based on time range and panel width
 			</info-popover>
 		</div>
 
 		<div class="gf-form">
-			<label class="gf-form-label">Resolution</label>
+			<label class="gf-form-label" translate>Resolution</label>
 			<div class="gf-form-select-wrapper max-width-15">
 				<select ng-model="ctrl.target.intervalFactor" class="gf-form-input"
 					ng-options="r.factor as r.label for r in ctrl.resolutions"
@@ -41,7 +41,7 @@
 		</div>
 
 		<div class="gf-form">
-			<label class="gf-form-label width-6">Format as</label>
+			<label class="gf-form-label width-6" translate>Format as</label>
 			<div class="gf-form-select-wrapper width-8">
 				<select class="gf-form-input gf-size-auto" ng-model="ctrl.target.format" ng-options="f.value as f.text for f in ctrl.formats" ng-change="ctrl.refresh()"></select>
 			</div>

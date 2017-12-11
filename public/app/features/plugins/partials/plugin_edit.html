@@ -52,14 +52,14 @@
 
     <aside class="page-sidebar">
       <section class="page-sidebar-section">
-        <h4>Version</h4>
+        <h4 translate>Version</h4>
         <span>{{ctrl.model.info.version}}</span>
 				<div ng-show="ctrl.model.hasUpdate">
           <a ng-click="ctrl.updateAvailable()" bs-tooltip="ctrl.model.latestVersion">Update Available!</a>
 				</div>
       </section>
       <section class="page-sidebar-section" ng-show="ctrl.model.type === 'app'">
-        <h5>Includes</h4>
+        <h5 translate>Includes</h4>
         <ul class="ui-list plugin-info-list">
           <li ng-repeat="plug in ctrl.includes" class="plugin-info-list-item">
             <i class="{{plug.icon}}"></i>
@@ -68,7 +68,7 @@
         </ul>
       </section>
       <section class="page-sidebar-section">
-        <h5>Dependencies</h4>
+        <h5 translate>Dependencies</h4>
         <ul class="ui-list plugin-info-list">
           <li class="plugin-info-list-item">
             <img src="public/img/grafana_icon.svg"></img>
@@ -81,7 +81,7 @@
         </ul>
       </section>
       <section class="page-sidebar-section">
-        <h5>Links</h4>
+        <h5 translate>Links</h4>
         <ul class="ui-list">
           <li ng-repeat="link in ctrl.model.info.links">
             <a href="{{link.url}}" class="external-link" target="_blank">{{link.name}}</a>

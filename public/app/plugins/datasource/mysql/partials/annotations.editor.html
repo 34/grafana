@@ -9,7 +9,7 @@
   <div class="gf-form-inline">
     <div class="gf-form">
       <label class="gf-form-label query-keyword" ng-click="ctrl.showHelp = !ctrl.showHelp">
-        Show Help
+        <span translate>Show Help</span>
         <i class="fa fa-caret-down" ng-show="ctrl.showHelp"></i>
         <i class="fa fa-caret-right" ng-hide="ctrl.showHelp"></i>
       </label>
@@ -17,7 +17,7 @@
   </div>
 
   <div class="gf-form"  ng-show="ctrl.showHelp">
-		<pre class="gf-form-pre alert alert-info"><h6>Annotation Query Format</h6>
+		<pre class="gf-form-pre alert alert-info"><h6 translate>Annotation Query Format</h6>
 An annotation is an event that is overlayed on top of graphs. The query can have up to four columns per row, the time_sec column is mandatory. Annotation rendering is expensive so it is important to limit the number of rows returned.
 
 - column with alias: <b>time_sec</b> for the annotation event. Format is UTC in seconds, use UNIX_TIMESTAMP(column)

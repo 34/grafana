@@ -9,32 +9,32 @@
 
     <div class="login-inner-box">
 			<div class="login-tab-header">
-				<button class="btn-login-tab" ng-click="loginMode = true;" ng-class="{active: loginMode}">
+				<button class="btn-login-tab" ng-click="loginMode = true;" ng-class="{active: loginMode}" translate>
 					Log in
 				</button>
-				<button class="btn-login-tab" ng-click="loginMode = false;" ng-class="{active: !loginMode}" ng-show="!disableUserSignUp">
+				<button class="btn-login-tab" ng-click="loginMode = false;" ng-class="{active: !loginMode}" ng-show="!disableUserSignUp" translate>
 					Sign up
 				</button>
 			</div>
 
       <form name="loginForm" class="login-form gf-form-group" ng-hide="disableLoginForm">
 				<div class="gf-form" ng-if="loginMode">
-					<span class="gf-form-label width-7">User</span>
+					<span class="gf-form-label width-7" translate>User</span>
 					<input type="text" name="username" class="gf-form-input max-width-14" required ng-model='formModel.user' placeholder={{loginHint}} autofocus>
 				</div>
 				<div class="gf-form" ng-if="loginMode">
-					<span class="gf-form-label width-7">Password</span>
+					<span class="gf-form-label width-7" translate>Password</span>
 					<input type="password" name="password" class="gf-form-input max-width-14" required ng-model="formModel.password" id="inputPassword" placeholder="password">
 				</div>
 
 				<div class="gf-form" ng-if="!loginMode">
-						<span class="gf-form-label width-7">Email</span>
+						<span class="gf-form-label width-7" translate>Email</span>
 						<input type="email" class="gf-form-input max-width-14" required ng-model='formModel.email' placeholder="email">
 				</div>
 
 				<div class="gf-form-button-row">
 					<button type="submit" class="btn btn-large p-x-3" ng-click="submit();" ng-class="{'btn-inverse': !loginForm.$valid, 'btn-primary': loginForm.$valid}">
-						{{submitBtnText}}
+						{{submitBtnText | translate}}
 					</button>
 				</div>
 			</form>
@@ -43,7 +43,7 @@
 				<div class="text-center login-divider" ng-show="oauthEnabled">
 					<div class="login-divider-line">
 						<span class="login-divider-text">
-							<span ng-hide="disableLoginForm">Or</span> Login With
+							<span ng-hide="disableLoginForm" translate>Or</span> <span translate>Login With</span>
 						</span>
 					</div>
 				</div>
@@ -75,7 +75,7 @@
 
 		<div class="text-center password-recovery" ng-hide="disableLoginForm">
 			<div class="text-center">
-				<a href="user/password/send-reset-email">
+				<a href="user/password/send-reset-email" translate>
 					Forgot your password?
 				</a>
 			</div>

@@ -21,32 +21,32 @@
     <ul class="dash-row-menu" role="menu">
       <li>
         <a ng-click="ctrl.toggleCollapse()">
-          <i class="fa fa-minus"></i> Collapse
+          <i class="fa fa-minus"></i> <span translte>Collapse</span>
         </a>
       </li>
       <li ng-show="ctrl.dashboard.meta.canEdit">
         <a ng-click="ctrl.onMenuAddPanel()">
-          <i class="fa fa-plus"></i> Add Panel
+          <i class="fa fa-plus"></i> <span translte>Add Panel</span>
         </a>
       </li>
       <li ng-show="ctrl.dashboard.meta.canEdit">
         <a ng-click="ctrl.onMenuRowOptions()">
-          <i class="fa fa-cog"></i> Row Options
+          <i class="fa fa-cog"></i> <span translte>Row Options</span>
         </a>
       </li>
       <li ng-show="ctrl.dashboard.meta.canEdit">
         <a ng-click="ctrl.moveRow(-1)">
-          <i class="fa fa-arrow-up"></i> Move Up
+          <i class="fa fa-arrow-up"></i> <span translte>Move Up</span>
         </a>
       </li>
       <li ng-show="ctrl.dashboard.meta.canEdit">
         <a ng-click="ctrl.moveRow(1)">
-          <i class="fa fa-arrow-down"></i> Move Down
+          <i class="fa fa-arrow-down"></i> <span translte>Move Down</span>
         </a>
       </li>
       <li ng-show="ctrl.dashboard.meta.canEdit">
         <a ng-click="ctrl.onMenuDeleteRow()">
-          <i class="fa fa-trash"></i> Remove
+          <i class="fa fa-trash"></i> <span translte>Remove</span>
         </a>
       </li>
     </ul>

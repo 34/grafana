@@ -11,17 +11,17 @@
 		</div>
 
     <div class="invite-box">
-			<h3>
+			<h3 translate>
 				You're almost there.
 			</h3>
 
-			<div class="modal-tagline">
+			<div class="modal-tagline" translate>
 				We just need a couple of more bits of<br> information to finish creating your account.
 			</div>
 
 			<div style="display: inline-block; margin-top: 25px; width: 300px">
 					<div class="editor-option">
-						<label class="small">Your email:</label>
+						<label class="small" translate>Your email:</label>
 						<span class="large">{{formModel.email}}</span>
 					</div>
 			</div>
@@ -32,26 +32,26 @@
 
 				<div class="gf-form" ng-if="verifyEmailEnabled">
 					<span class="gf-form-label width-9">
-						Email code<tip>Email verification code (sent to your email)</tip>
+						<span translate>Email code</span><tip translate>Email verification code (sent to your email)</tip>
 					</span>
 					<input type="text" class="gf-form-input max-width-14" ng-model="formModel.code" required></input>
 				</div>
 
 				<div class="gf-form" ng-if="!autoAssignOrg">
-					<span class="gf-form-label width-9">Org. name</span>
+					<span class="gf-form-label width-9" translate>Org. name</span>
 					<input type="text" name="orgName" class="gf-form-input max-width-14" ng-model='formModel.orgName' placeholder="Name your organization">
 				</div>
 
 				<div class="gf-form">
-					<span class="gf-form-label width-9">Your name</span>
+					<span class="gf-form-label width-9" translate>Your name</span>
 					<input type="text" name="name" class="gf-form-input max-width-14" ng-model='formModel.name' placeholder="(optional)">
 				</div>
 				<div class="gf-form">
-					<span class="gf-form-label width-9">Username</span>
+					<span class="gf-form-label width-9" translate>Username</span>
 					<input type="text" class="gf-form-input max-width-14" required ng-model='formModel.username' placeholder="Username" autocomplete="off">
 				</div>
 				<div class="gf-form">
-					<span class="gf-form-label width-9">Password</span>
+					<span class="gf-form-label width-9" translate>Password</span>
 					<input type="password" class="gf-form-input max-width-14" required ng-model="formModel.password" id="inputPassword" placeholder="password" autocomplete="off">
 				</div>
 
@@ -60,7 +60,7 @@
 				</div>
 
 				<div class="gf-form-button-row">
-					<button type="submit" class="btn" ng-click="ctrl.submit();" ng-class="{'btn-inverse': !signUpForm.$valid, 'btn-primary': signUpForm.$valid}">
+					<button type="submit" class="btn" ng-click="ctrl.submit();" ng-class="{'btn-inverse': !signUpForm.$valid, 'btn-primary': signUpForm.$valid}" translate>
 						Continue
 					</button>
 				</div>

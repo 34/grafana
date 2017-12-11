@@ -1,7 +1,7 @@
 <div class="modal-body" ng-controller="AddAnnotationModalCtrl">
 
   <div class="modal-header">
-    <h2 class="modal-header-title">
+    <h2 class="modal-header-title" translate>
       Add Annotation
     </h2>
 
@@ -22,27 +22,27 @@
         <div class="share-modal-content">
 
           <div class="gf-form-group share-modal-options">
-            <p class="share-modal-info-text">
+            <p class="share-modal-info-text" translate>
               Add annotation details.
             </p>
 
             <div class="gf-form">
-              <span class="gf-form-label width-8">Title</span>
+              <span class="gf-form-label width-8" translate>Title</span>
               <input type="text" ng-model="ctrl.annotation.title" class="gf-form-input max-width-20">
             </div>
             <div class="gf-form">
-              <span class="gf-form-label width-8" ng-if="!ctrl.annotation.timeTo">Time</span>
-              <span class="gf-form-label width-8" ng-if="ctrl.annotation.timeTo">Time Start</span>
+              <span class="gf-form-label width-8" ng-if="!ctrl.annotation.timeTo" translate>Time</span>
+              <span class="gf-form-label width-8" ng-if="ctrl.annotation.timeTo" translate>Time Start</span>
               <input type="text" ng-model="ctrl.annotation.time" class="gf-form-input max-width-20">
             </div>
             <div class="gf-form" ng-if="ctrl.annotation.timeTo">
-              <span class="gf-form-label width-8">Time Stop</span>
+              <span class="gf-form-label width-8" translate>Time Stop</span>
               <input type="text" ng-model="ctrl.annotation.timeTo" class="gf-form-input max-width-20">
             </div>
           </div>
 
           <div>
-            <h6>Description</h6>
+            <h6 translate>Description</h6>
           </div>
           <div class="gf-form-group share-modal-options">
             <div class="gf-form">
@@ -53,7 +53,7 @@
           <div class="gf-form-button-row">
             <button class="btn gf-form-btn width-10 btn-success" ng-click="ctrl.addAnnotation()">
               <i class="fa fa-pencil"></i>
-              Add Annotation
+              <span translate>Add Annotation</span>
             </button>
           </div>
         </div>

@@ -15,8 +15,8 @@
 				</td>
 				<td>
           <span>
-            Revision: {{dash.revision}}
-            <span ng-if="dash.imported" class="small">(Imported: {{dash.importedRevision}})</span>
+            <span translate>Revision:</span> {{dash.revision}}
+            <span ng-if="dash.imported" class="small">(<span translate>Imported:</span> {{dash.importedRevision}})</span>
           <span>
 				</td>
 				<td style="text-align: right">
@@ -24,8 +24,8 @@
 						Import
 					</button>
 					<button class="btn btn-secondary btn-small" ng-click="ctrl.import(dash, true)" ng-show="dash.imported">
-            <span ng-if="dash.revision !== dash.importedRevision">Update</span>
-            <span ng-if="dash.revision === dash.importedRevision">Re-import</span>
+            <span ng-if="dash.revision !== dash.importedRevision" translate>Update</span>
+            <span ng-if="dash.revision === dash.importedRevision" translate>Re-import</span>
 					</button>
 					<button class="btn btn-danger btn-small" ng-click="ctrl.remove(dash)" ng-show="dash.imported">
 						<i class="fa fa-trash"></i>

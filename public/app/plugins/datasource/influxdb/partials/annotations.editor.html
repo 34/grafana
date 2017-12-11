@@ -5,19 +5,19 @@
 	</div>
 </div>
 
-<h5 class="section-heading">Field mappings <tip>If your influxdb query returns more than one field you need to specify the column names below. An annotation event is composed of a title, tags, and an additional text field.</tip></h5>
+<h5 class="section-heading"><span translate>Field mappings</span> <tip translate>If your influxdb query returns more than one field you need to specify the column names below. An annotation event is composed of a title, tags, and an additional text field.</tip></h5>
 <div class="gf-form-group">
 	<div class="gf-form-inline">
 		<div class="gf-form">
-			<span class="gf-form-label width-4">Text</span>
+			<span class="gf-form-label width-4" translate>Text</span>
 			<input type="text" class="gf-form-input max-width-10" ng-model='ctrl.annotation.textColumn' placeholder=""></input>
 		</div>
 		<div class="gf-form">
-			<span class="gf-form-label width-4">Tags</span>
+			<span class="gf-form-label width-4" translate>Tags</span>
 			<input type="text" class="gf-form-input max-width-10" ng-model='ctrl.annotation.tagsColumn' placeholder=""></input>
 		</div>
 		<div class="gf-form" ng-show="ctrl.annotation.titleColumn">
-			<span class="gf-form-label width-4">Title <em class="muted">(depricated)</em></span>
+			<span class="gf-form-label width-4" translate>Title <em class="muted">(depricated)</em></span>
 			<input type="text" class="gf-form-input max-width-10" ng-model='ctrl.annotation.titleColumn' placeholder=""></input>
 		</div>
 	</div>
